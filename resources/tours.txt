@@ -1,0 +1,9 @@
+1;Sendero Volcan;Caminata;20000
+2;Excursíon campos;Caminata;40000
+3;Cena Hotel;Gastronomía;5000
+4;Cóctel Hotel;Gastronomía;10000
+5;Ruta Lago;Caminata;7000
+6;Cena Lago;Gastronomía;15000
+7;Recorrido en bote;Tour;14000
+8;Caminata Lago;Caminata;-5000
+8;;Gastronomía;4000;Hotel Cabaña del Lago
