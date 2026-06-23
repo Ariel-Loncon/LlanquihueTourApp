@@ -1,7 +1,4 @@
 package com.LlanquihueTourApp.model;
-import com.LlanquihueTourApp.model.Operadores;
-
-import java.awt.geom.Area;
 
 /**
  * Clase encargada de gestionar los datos del tour

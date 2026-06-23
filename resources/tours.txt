@@ -6,4 +6,4 @@
 6;Cena Lago;Gastronomía;15000
 7;Recorrido en bote;Tour;14000
 8;Caminata Lago;Caminata;-5000
-8;;Gastronomía;4000;Hotel Cabaña del Lago
+9;;Gastronomía;4000;Hotel Cabaña del Lago
