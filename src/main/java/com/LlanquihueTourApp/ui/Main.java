@@ -27,15 +27,15 @@ public class Main {
         while (opcion != 6) {
             System.out.println("\n--- MENÚ DE CONSULTAS ---");
             System.out.println("1. Listar todos los Tours");
-            System.out.println("2. Filtrar Tours por producción (> 10000)");
+            System.out.println("2. Filtrar Tours por producción (ingrese monto)");
             System.out.println("3. Filtrar Tours por tipo (Gastronomía, etc.)");
             System.out.println("4. Listar todos los Guías");
             System.out.println("5. Listar todos los Operadores locales");
             System.out.println("6. Salir");
             System.out.print("Seleccione una opción: ");
-            if (sc.hasNextInt()) { // Verificamos si lo que ingresó es un número entero
+            if (sc.hasNextInt()) {
                 opcion = sc.nextInt();
-                sc.nextLine(); // Consumir el salto de línea
+                sc.nextLine();
 
                 switch (opcion) {
                     case 1:

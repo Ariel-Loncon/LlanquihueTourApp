@@ -57,7 +57,6 @@ public class GestorDatos {
                     // Captura errores específicos de conversión numérica sin tumbar la lectura completa
                     System.out.println("Error de formato numérico en línea " + lineNumber + ": " + nfe.getMessage());
                 }catch (IllegalArgumentException iae) {
-                    // ESTE ES EL NUEVO CATCH PARA TUS VALIDACIONES
                     System.out.println("Error de validación Tours en línea " + lineNumber + ": " + iae.getMessage());
                 }
             }

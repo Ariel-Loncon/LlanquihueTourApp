@@ -44,8 +44,6 @@ public class GestorOperadores {
                     String oNombre = data[0].trim();
                     String oArea = data[1].trim();
 
-                    //Se crea un objeto NewTour con los datos leidos
-
                     Operadores newOpLocal = new Operadores(oNombre,oArea);
                     OpLocalList.add(newOpLocal);
 
