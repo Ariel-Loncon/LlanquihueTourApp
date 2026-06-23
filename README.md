@@ -23,7 +23,7 @@ Este proyecto consiste en el diseño e implementacion de un sistema de gestión 
 * **Composición:** Implementación de relaciones lógicas donde una clase contiene a otra como atributo central (por ejemplo, los datos de una persona).
 * **Sobrescritura:** Uso del método `toString()` en todas las entidades para asegurar un formato de salida limpio, legible y estandarizado por consola.
 * **Validación de Datos:** Uso de clases especializadas (rut, email) para asegurar que solo información con formato válido ingrese al sistema.
-* **Persistencia Básica:**Lectura y procesamiento de archivos .txt mediante gestores dedicados.
+* **Persistencia Básica:** Lectura y procesamiento de archivos .txt mediante gestores dedicados.
 
 ---
 
@@ -62,21 +62,26 @@ Para ejecutar correctamente la aplicación "Llanquihue Tour", asegúrate de segu
 ---
 
 ```plaintext
+
+  📁 resources           #Carpeta que almacena los aerchivos de entrada
+    ├── guias.txt
+    ├── operadores.txt
+    ├── tours.txt
   📁 src/com/LlanquihueTourApp/
-├── data/             # Gestores de lectura y persistencia de archivos
-│   ├── GestorArchivo.java
-│   ├── GestorGuias.java
-│   ├── GestorOperadores.java
-│   └── GestorDatos.java
-├── model/            # Entidades del dominio
-│   ├── Guia.java
-│   ├── Operadores.java
-│   └── Tours.java
-├── ui/               # Interfaz de usuario (consola)
-│   └── Main.java
-└── util/             # Clases de validación y utilidades
-    ├── email.java
-    └── rut.java
+    ├── data/             # Gestores de lectura y persistencia de archivos
+    │   ├── GestorArchivo.java
+    │   ├── GestorGuias.java
+    │   ├── GestorOperadores.java
+    │   └── GestorDatos.java
+    ├── model/            # Entidades del dominio
+    │   ├── Guia.java
+    │   ├── Operadores.java
+    │   └── Tours.java
+    ├── ui/               # Interfaz de usuario (consola)
+    │   └── Main.java
+    └── util/             # Clases de validación y utilidades
+        ├── email.java
+        └── rut.java
 ---
 
 
