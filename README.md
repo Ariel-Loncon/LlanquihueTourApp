@@ -41,6 +41,26 @@ El sistema incorpora filtros funcionales para optimizar la toma de decisiones de
 * Producción Destacada: Filtra tours cuya producción es superior a $10.000, permitiendo a la agencia identificar sus servicios más rentables.
 * Filtrado por Categoría: Permite al usuario segmentar la oferta turística según el tipo (Gastronomía, Cultural, etc.), facilitando la búsqueda rápida de actividades.
 * Validación de Integridad: Antes de cargar cualquier objeto, se aplica un filtro de validación mediante try-catch y expresiones regulares, asegurando que solo información coherente y con formato válido (RUT y Email) sea almacenada en las colecciones.
+
+---
+
+## 🚀 Instrucciones de ejecución
+Para ejecutar correctamente la aplicación "Llanquihue Tour", asegúrate de seguir estos pasos en tu entorno de desarrollo (IDE como IntelliJ IDEA, NetBeans, etc).
+## Requisitos previos:
+* Tener instalado Java JDK 8 o superior.
+* Para las carpetas del directorio resources/ en la raíz del proyecto, con los archivos tours.txt, guias.txt y operadores.txt si llegan a no estar, el mismo codigo las creara, pero sin datos a mostrar.
+## Compilación y ejecución:
+* Ubica la clase Main.java dentro del paquete com.LlanquihueTourApp.ui.
+* Compila el proyecto para asegurar que todas las dependencias del modelo y utilidades estén vinculadas.
+* Ejecuta el método main de la clase Main.
+## Interacción con el sistema:
+* Una vez iniciado, el programa desplegará el Menú de Consultas en la consola.
+* Utiliza las teclas numéricas del 1 al 6 para navegar entre las opciones.
+* El sistema solicitará entradas específicas (montos o tipos de tour) para realizar filtrados. Sigue las instrucciones en pantalla para obtener resultados precisos.
+* Para finalizar la sesión, selecciona la opción 6 (Salir), lo cual cerrará el flujo del programa y liberará el recurso del Scanner.
+
+---
+
 ```plaintext
   📁 src/com/LlanquihueTourApp/
 ├── data/             # Gestores de lectura y persistencia de archivos
