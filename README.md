@@ -1,7 +1,7 @@
 [README_plantilla_EFT.md](https://github.com/user-attachments/files/28673507/README_plantilla_EFT.md)
 
 ![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
-# 🧠 Semanan 5
+# 🧠 Semana 5
 **Actividad Sumativa 2: Organización modular y creación de una librería personaliza**
 
 ## 👤 Autor del proyecto
