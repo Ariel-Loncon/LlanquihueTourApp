@@ -6,6 +6,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.IOException;
 
+/**
+ * Clase encargada de gestionar los datos de Tours guardada enn el archivo de texto mediante Arraylist
+ */
 
 public class GestorDatos {
 

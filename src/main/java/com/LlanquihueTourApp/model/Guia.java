@@ -1,11 +1,23 @@
 package com.LlanquihueTourApp.model;
 import com.LlanquihueTourApp.util.*;
 
+/**
+ * Clase en cargada de gestionar los datos de los Guias
+ *
+ */
+
 public class Guia {
 
     private rut    rut;
     private String name;
     private email  email;
+
+    /**
+     *
+     * @param rut   RUT(Rol único tributario) número de identificación usado en Chile
+     * @param name  nombre para la persona que hará de guía
+     * @param email Dirección de correo electrónico del cliente
+     */
 
 
     public Guia(rut rut, String name, email email) {
@@ -40,6 +52,12 @@ public class Guia {
     public void setEmail(email email) {
         this.email = email;
     }
+
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información del guía
+     * incluye las etiquetas de nombre, RUT y Email
+     * @return
+     */
 
     @Override
     public String toString() {

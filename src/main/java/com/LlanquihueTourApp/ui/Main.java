@@ -33,49 +33,57 @@ public class Main {
             System.out.println("5. Listar todos los Operadores locales");
             System.out.println("6. Salir");
             System.out.print("Seleccione una opción: ");
-            opcion = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
+            if (sc.hasNextInt()) { // Verificamos si lo que ingresó es un número entero
+                opcion = sc.nextInt();
+                sc.nextLine(); // Consumir el salto de línea
 
-            switch (opcion) {
-                case 1:
-                    System.out.println("---LISTA DE TOURS---");
-                    for (Tours t : fullList) {
-                        System.out.println(t);
-                    }
-                    break;
-                case 2:
-                    fullList.stream()
-                            .filter(t -> t.getProduction() > 10000)
-                            .forEach(System.out::println);
-                    break;
-                case 3:
-                    System.out.print("Ingrese el tipo de tour a buscar: ");
-                    String tipo = sc.nextLine();
-                    fullList.stream()
-                            .filter(t -> t.getType().equalsIgnoreCase(tipo))
-                            .forEach(System.out::println);
-                    break;
-                case 4:
-                    System.out.println("---LISTA DE GUIAS---");
-                    for (Guia t : listaGuias) {
-                        System.out.println(t);
-                    }
-                    break;
-                case 5:
-                    System.out.println("---LISTA DE OPERADORES LOCALES---");
-                    for (Operadores t : listaOp) {
-                        System.out.println(t);
-                    }
-                    break;
-                case 6:
-                    System.out.println("¡Hasta luego!");
-                    break;
-                default:
-                    System.out.println("Opción no válida.");
+                switch (opcion) {
+                    case 1:
+                        System.out.println("---LISTA DE TOURS---");
+                        for (Tours t : fullList) {
+                            System.out.println(t);
+                        }
+                        break;
+                    case 2:
+                        System.out.print("Ingrese el monto mínimo de producción para filtrar: ");
+                        double montoMinimo = sc.nextDouble();
+                        sc.nextLine();
+
+                        System.out.println("--- Tours con producción mayor a " + montoMinimo + " ---");
+                        fullList.stream()
+                                .filter(t -> t.getProduction() > montoMinimo)
+                                .forEach(System.out::println);
+                        break;
+                    case 3:
+                        System.out.print("Ingrese el tipo de tour a buscar: ");
+                        String tipo = sc.nextLine();
+                        fullList.stream()
+                                .filter(t -> t.getType().equalsIgnoreCase(tipo))
+                                .forEach(System.out::println);
+                        break;
+                    case 4:
+                        System.out.println("---LISTA DE GUIAS---");
+                        for (Guia t : listaGuias) {
+                            System.out.println(t);
+                        }
+                        break;
+                    case 5:
+                        System.out.println("---LISTA DE OPERADORES LOCALES---");
+                        for (Operadores t : listaOp) {
+                            System.out.println(t);
+                        }
+                        break;
+                    case 6:
+                        System.out.println("¡Hasta luego!");
+                        break;
+                    default:
+                        System.out.println("Opción no válida.");
+                }
+            } else {
+                System.out.println("Error: Entrada no válida. Por favor, ingrese un número.");
+                sc.nextLine();
             }
-
         }
         sc.close();
-
     }
 }

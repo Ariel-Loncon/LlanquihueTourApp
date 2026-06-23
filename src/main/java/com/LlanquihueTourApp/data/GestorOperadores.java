@@ -1,14 +1,14 @@
 package com.LlanquihueTourApp.data;
 
-import com.LlanquihueTourApp.model.Guia;
 import com.LlanquihueTourApp.model.Operadores;
-import com.LlanquihueTourApp.util.email;
-import com.LlanquihueTourApp.util.rut;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
+/**
+ * Clase encargada de gestionar los datos de Operadores guardada enn el archivo de texto mediante Arraylist
+ */
 
 public class GestorOperadores {
     public ArrayList<Operadores> readOpLocalText(String filePath) {

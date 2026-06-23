@@ -1,10 +1,19 @@
 package com.LlanquihueTourApp.model;
 
+/**
+ * Clase encargada de gestionar los datos del operador local
+ */
 
 public class Operadores{
     private String nombre;
     private String area;
 
+
+    /**
+     *
+     * @param nombre Nombre del operador local de la zona
+     * @param area   Aréa en el que se desempeña el operador local
+     */
 
     public Operadores(String nombre, String area) {
         setNombre(nombre);
@@ -32,6 +41,12 @@ public class Operadores{
         }
         this.area = area;
     }
+
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información del operador local.
+     * incluye las etiquetas de nombre y arèa.
+     * @return
+     */
 
     @Override
     public String toString() {

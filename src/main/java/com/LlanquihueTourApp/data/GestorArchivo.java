@@ -1,5 +1,9 @@
 package com.LlanquihueTourApp.data;
 
+/**
+ * Clase encargada de gestionar la validación del archivo txt.
+ */
+
 import java.io.File;
 
 public class GestorArchivo {

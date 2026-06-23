@@ -7,6 +7,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Clase encargada de gestionar los datos de Guia guardada enn el archivo de texto mediante Arraylist.
+ */
+
 public class GestorGuias {
     public ArrayList<Guia> readGuiasText(String filePath) {
         //lista donde se almacenara la información
