@@ -9,7 +9,7 @@ import com.LlanquihueTourApp.util.*;
 public class Guia {
 
     private rut    rut;
-    private String name;
+    private String gName;
     private email  email;
 
     /**
@@ -22,7 +22,7 @@ public class Guia {
 
     public Guia(rut rut, String name, email email) {
         this.rut = rut;
-        setName(name);
+        setgName(name);
         this.email = email;
     }
 
@@ -34,15 +34,15 @@ public class Guia {
         this.rut = rut;
     }
 
-    public String getName() {
-        return name;
+    public String getgName() {
+        return gName;
     }
 
-    public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
+    public void setgName(String gName) {
+        if (gName == null || gName.trim().isEmpty()) {
             throw new IllegalArgumentException("El nombre del guía no puede estar vacío.");
         }
-        this.name = name;
+        this.gName = gName;
     }
 
     public email getEmail() {
@@ -63,7 +63,7 @@ public class Guia {
     public String toString() {
         return " " +
                 "| RUT: " + rut +
-                "| Nombre: " + name +
+                "| Nombre: " + gName +
                 "| Email: " + email +
                 '|';
     }

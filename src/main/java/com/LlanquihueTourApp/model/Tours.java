@@ -6,7 +6,7 @@ package com.LlanquihueTourApp.model;
 
 public class Tours{
     private int id;
-    private String name;
+    private String tName;
     private String type;
     private double production;
 
@@ -22,7 +22,7 @@ public class Tours{
 
     public Tours(int id, String name, String type, double production) {
         setId(id);
-        setName(name);
+        settName(name);
         setType(type);
         setProduction(production);
     }
@@ -35,15 +35,15 @@ public class Tours{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String gettName() {
+        return tName;
     }
 
-    public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
+    public void settName(String tName) {
+        if (tName == null || tName.trim().isEmpty()) {
             throw new IllegalArgumentException("El nombre del tour no puede estar vacío.");
         }
-        this.name = name;
+        this.tName = tName;
     }
 
     public String getType() {
@@ -75,7 +75,7 @@ public class Tours{
     public String toString() {
         return "TOUR  " +
                 " | Id:" + id +
-                " | Nombre: " + name +
+                " | Nombre: " + tName +
                 " | Tipo: " + type +
                 " | Producción: " + production +
                 "|";

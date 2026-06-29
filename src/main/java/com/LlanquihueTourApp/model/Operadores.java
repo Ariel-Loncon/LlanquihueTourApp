@@ -5,7 +5,7 @@ package com.LlanquihueTourApp.model;
  */
 
 public class Operadores{
-    private String nombre;
+    private String oName;
     private String area;
 
 
@@ -16,19 +16,19 @@ public class Operadores{
      */
 
     public Operadores(String nombre, String area) {
-        setNombre(nombre);
+        setoName(nombre);
         setArea(area);
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getoName() {
+        return oName;
     }
 
-    public void setNombre(String nombre) {
-        if (nombre == null || nombre.trim().isEmpty()) {
+    public void setoName(String oName) {
+        if (oName == null || oName.trim().isEmpty()) {
             throw new IllegalArgumentException("El nombre del operador no puede estar vacío.");
         }
-        this.nombre = nombre;
+        this.oName = oName;
     }
 
     public String getArea() {
@@ -51,7 +51,7 @@ public class Operadores{
     @Override
     public String toString() {
         return "|" +
-                "| NOMBRE: " + nombre +
+                "| NOMBRE: " + oName +
                 "| AREA: " + area +
                 '|';
     }

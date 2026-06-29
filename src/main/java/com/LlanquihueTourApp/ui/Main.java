@@ -2,7 +2,7 @@ package com.LlanquihueTourApp.ui;
 
 import com.LlanquihueTourApp.data.*;
 import com.LlanquihueTourApp.model.*;
-import com.LlanquihueTourApp.util.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,6 +23,9 @@ public class Main {
         String pathOpLocal = "resources/operadores.txt";
         ArrayList<Operadores> listaOp = gestorOperadores.readOpLocalText(pathOpLocal);
 
+        GestorServicios gestorServicios1 = new GestorServicios();
+        gestorServicios1.mostrarServicio();
+
         int opcion = 0;
         while (opcion != 6) {
             System.out.println("\n--- MENÚ DE CONSULTAS ---");
@@ -31,7 +34,8 @@ public class Main {
             System.out.println("3. Filtrar Tours por tipo (Gastronomía, etc.)");
             System.out.println("4. Listar todos los Guías");
             System.out.println("5. Listar todos los Operadores locales");
-            System.out.println("6. Salir");
+            System.out.println("6. Lista servicios turisticos");
+            System.out.println("7. Salir");
             System.out.print("Seleccione una opción: ");
             if (sc.hasNextInt()) {
                 opcion = sc.nextInt();
@@ -74,6 +78,10 @@ public class Main {
                         }
                         break;
                     case 6:
+                        System.out.println("---LISTA DE SERVICIOS TURISTICOS---");
+                        gestorServicios1.mostrarServicio();
+                        break;
+                    case 7:
                         System.out.println("¡Hasta luego!");
                         break;
                     default:
