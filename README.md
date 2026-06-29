@@ -1,8 +1,8 @@
 [README_plantilla_EFT.md](https://github.com/user-attachments/files/28673507/README_plantilla_EFT.md)
 
 ![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
-# 🧠 Semana 5
-**Actividad Sumativa 2: Organización modular y creación de una librería personaliza**
+# 🧠 Semana 6
+**Actividad Formativa 4: Creación de jerarquías de clases con herencia simple**
 
 ## 👤 Autor del proyecto
 - **Nombre completo:** [Ariel Gustavo Loncon Lefimil]
@@ -17,6 +17,15 @@ Este proyecto consiste en el diseño e implementacion de un sistema de gestión 
 
 ---
 
+## 🛠️ Actualización: Semana 6 - Jerarquías y Herencia
+El objetivo de esta semana fue implementar una jerarquía de clases mediante herencia simple para modelar los distintos servicios turísticos de la agencia, permitiendo la reutilización de atributos comunes (nombre, duración) y especializando atributos propios de cada categoría.
+### Clases Creadas/Modificadas:
+- **Superclase:** `ServicioTuristico`
+- **Subclases:** `RutaGastronomica`, `PaseoLacustre`, `ExcursionCultural`
+- **Gestion:** Nueva clase en data `GestorServicios` para la instancia de objetos.
+
+---
+
 ## 🧱 Estructura general del proyecto
 ## Características Principales (POO)
 * **Encapsulamiento:** Todos los atributos de las clases del dominio son privados (`private`) y cuentan con métodos de acceso públicos (`getters` y `setters`).
@@ -24,6 +33,7 @@ Este proyecto consiste en el diseño e implementacion de un sistema de gestión 
 * **Sobrescritura:** Uso del método `toString()` en todas las entidades para asegurar un formato de salida limpio, legible y estandarizado por consola.
 * **Validación de Datos:** Uso de clases especializadas (rut, email) para asegurar que solo información con formato válido ingrese al sistema.
 * **Persistencia Básica:** Lectura y procesamiento de archivos .txt mediante gestores dedicados.
+* **Herencia:** Extensión de clases base generales para representar de manera eficiente y jerárquica los datos específicos dentro del ecosistema de la agencia de Tours (como el nombre y cantidad de horas).
 
 ---
 
@@ -55,7 +65,7 @@ Para ejecutar correctamente la aplicación "Llanquihue Tour", asegúrate de segu
 * Ejecuta el método main de la clase Main.
 ## Interacción con el sistema:
 * Una vez iniciado, el programa desplegará el Menú de Consultas en la consola.
-* Utiliza las teclas numéricas del 1 al 6 para navegar entre las opciones.
+* Utiliza las teclas numéricas del 1 al 7 para navegar entre las opciones.
 * El sistema solicitará entradas específicas (montos o tipos de tour) para realizar filtrados. Sigue las instrucciones en pantalla para obtener resultados precisos.
 * Para finalizar la sesión, selecciona la opción 6 (Salir), lo cual cerrará el flujo del programa y liberará el recurso del Scanner.
 
@@ -73,10 +83,15 @@ Para ejecutar correctamente la aplicación "Llanquihue Tour", asegúrate de segu
     │   ├── GestorGuias.java
     │   ├── GestorOperadores.java
     │   └── GestorDatos.java
+    │   └── GestorServicios.java
     ├── model/            # Entidades del dominio
     │   ├── Guia.java
     │   ├── Operadores.java
     │   └── Tours.java
+    │   └── ServicioTuristico.java
+    │   └── RutaGastronomica.java
+    │   └── PaseoLacustre.java
+    │   └── ExcursionCultural .java
     ├── ui/               # Interfaz de usuario (consola)
     │   └── Main.java
     └── util/             # Clases de validación y utilidades
@@ -85,8 +100,8 @@ Para ejecutar correctamente la aplicación "Llanquihue Tour", asegúrate de segu
 ---
 
 
-**Fecha de entrega:** \[22/06/2026]
+**Fecha de entrega:** \[29/06/2026]
 
 ---
 
-© Duoc UC | Escuela de Informática y Telecomunicaciones | Actividad Sumativa 2: Organización modular y creación de una librería personaliza
+© Duoc UC | Escuela de Informática y Telecomunicaciones | Actividad Formativa 4: Creación de jerarquías de clases con herencia simple
