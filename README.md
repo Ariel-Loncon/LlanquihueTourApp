@@ -22,7 +22,7 @@ El objetivo de esta semana fue implementar una jerarquía de clases mediante her
 ### Clases Creadas/Modificadas:
 - **Superclase:** `ServicioTuristico`
 - **Subclases:** `RutaGastronomica`, `PaseoLacustre`, `ExcursionCultural`
-- **Gestion:** Nueva clase en data `GestorServicios` para la instancia de objetos.
+- **Gestion:** Nueva clase en data `GestorServicios` para la instancia de objetos de la nueva superclase y las nuevas subclases.
 
 ---
 
