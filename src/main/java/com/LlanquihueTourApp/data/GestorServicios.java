@@ -1,6 +1,9 @@
 package com.LlanquihueTourApp.data;
 import com.LlanquihueTourApp.model.*;
 
+/**
+ * Clase encargada de gestionar los datos de ServicioTuristico, RutaGastronomica, PaseoLacustre y ExcursionCultural
+ */
 
 public class GestorServicios {
     public void mostrarServicio() {
@@ -14,11 +17,13 @@ public class GestorServicios {
         ExcursionCultural excursionCultural1 = new ExcursionCultural("Puerto Octay", 3, "Casa Werner");
         ExcursionCultural excursionCultural2 = new ExcursionCultural("Frutillar Bajo", 3, "Museo Colonial Alemán");
 
+
         System.out.println(rutaGastronomica1.toString());
         System.out.println(rutaGastronomica2.toString());
         System.out.println(paseoLacustre1.toString());
         System.out.println(paseoLacustre2.toString());
         System.out.println(excursionCultural1.toString());
         System.out.println(excursionCultural2.toString());
+
     }
 }

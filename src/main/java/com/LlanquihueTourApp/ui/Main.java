@@ -52,7 +52,7 @@ public class Main {
                         System.out.print("Ingrese el monto mínimo de producción para filtrar: ");
                         try {
                             double montoMinimo = sc.nextDouble();
-                            sc.nextLine(); // Consumir el salto de línea pendiente
+                            sc.nextLine();
 
                             System.out.println("--- Tours con producción mayor a " + montoMinimo + " ---");
                             fullList.stream()
@@ -60,7 +60,7 @@ public class Main {
                                     .forEach(System.out::println);
                         } catch (java.util.InputMismatchException e) {
                             System.out.println("Error: Debe ingresar un valor numérico válido para el monto.");
-                            sc.nextLine(); // Limpiar el buffer del scanner para evitar un bucle infinito
+                            sc.nextLine();
                         }
                         break;
                     case 3:
