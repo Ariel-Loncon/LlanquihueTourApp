@@ -27,14 +27,14 @@ public class Main {
         gestorServicios1.mostrarServicio();
 
         int opcion = 0;
-        while (opcion != 6) {
+        while (opcion != 7) {
             System.out.println("\n--- MENÚ DE CONSULTAS ---");
             System.out.println("1. Listar todos los Tours");
             System.out.println("2. Filtrar Tours por producción (ingrese monto)");
             System.out.println("3. Filtrar Tours por tipo (Gastronomía, etc.)");
             System.out.println("4. Listar todos los Guías");
             System.out.println("5. Listar todos los Operadores locales");
-            System.out.println("6. Lista servicios turisticos");
+            System.out.println("6. Lista servicios turísticos");
             System.out.println("7. Salir");
             System.out.print("Seleccione una opción: ");
             if (sc.hasNextInt()) {
