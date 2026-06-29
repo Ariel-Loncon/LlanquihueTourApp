@@ -50,13 +50,18 @@ public class Main {
                         break;
                     case 2:
                         System.out.print("Ingrese el monto mínimo de producción para filtrar: ");
-                        double montoMinimo = sc.nextDouble();
-                        sc.nextLine();
+                        try {
+                            double montoMinimo = sc.nextDouble();
+                            sc.nextLine(); // Consumir el salto de línea pendiente
 
-                        System.out.println("--- Tours con producción mayor a " + montoMinimo + " ---");
-                        fullList.stream()
-                                .filter(t -> t.getProduction() > montoMinimo)
-                                .forEach(System.out::println);
+                            System.out.println("--- Tours con producción mayor a " + montoMinimo + " ---");
+                            fullList.stream()
+                                    .filter(t -> t.getProduction() > montoMinimo)
+                                    .forEach(System.out::println);
+                        } catch (java.util.InputMismatchException e) {
+                            System.out.println("Error: Debe ingresar un valor numérico válido para el monto.");
+                            sc.nextLine(); // Limpiar el buffer del scanner para evitar un bucle infinito
+                        }
                         break;
                     case 3:
                         System.out.print("Ingrese el tipo de tour a buscar: ");
