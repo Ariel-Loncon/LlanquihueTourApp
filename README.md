@@ -67,7 +67,7 @@ Para ejecutar correctamente la aplicación "Llanquihue Tour", asegúrate de segu
 * Una vez iniciado, el programa desplegará el Menú de Consultas en la consola.
 * Utiliza las teclas numéricas del 1 al 7 para navegar entre las opciones.
 * El sistema solicitará entradas específicas (montos o tipos de tour) para realizar filtrados. Sigue las instrucciones en pantalla para obtener resultados precisos.
-* Para finalizar la sesión, selecciona la opción 6 (Salir), lo cual cerrará el flujo del programa y liberará el recurso del Scanner.
+* Para finalizar la sesión, selecciona la opción 7 (Salir), lo cual cerrará el flujo del programa y liberará el recurso del Scanner.
 
 ---
 
