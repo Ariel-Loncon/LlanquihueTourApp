@@ -4,13 +4,13 @@ package com.LlanquihueTourApp.model;
  * SubClase que gestiona los datos de PaseoLacustre
  */
 
-public class PaseoLacustre extends ServicioTuristico{
+public class PaseoLacustre extends ServicioTuristico {
     private String tipoEmbarcacion;
 
     /**
      *
-     * @param nombre nombre del servicio del paseo lacustre
-     * @param duracionHoras duración en horas de la ruta
+     * @param nombre          nombre del servicio del paseo lacustre
+     * @param duracionHoras   duración en horas de la ruta
      * @param tipoEmbarcacion tipo de embarcación, modelo material, cantidad de pisos etc.
      */
 
@@ -30,6 +30,7 @@ public class PaseoLacustre extends ServicioTuristico{
 
     /**
      * Devuelve los datos en forma de texto de los datos de PaseoLacustre
+     *
      * @return Una cadena de texto estructurada con todos los datos heredados de ServicioTuristico más los datos de PaseoLacustre
      */
 
@@ -38,4 +39,5 @@ public class PaseoLacustre extends ServicioTuristico{
         return "---PASEO LA CUSTRE---" + super.toString() +
                 " |Tipo de Embarcación: " + tipoEmbarcacion;
     }
+
 }

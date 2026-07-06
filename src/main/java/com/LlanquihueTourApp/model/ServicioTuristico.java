@@ -35,6 +35,7 @@ public class ServicioTuristico {
         this.duracionHoras = duracionHoras;
     }
 
+
     /**
      * Devuelve los datos en forma de texto de los datos de ServicioTuristico
      * @return Una cadena de texto estructurada con todos los datos de ServicioTuristico
@@ -45,5 +46,10 @@ public class ServicioTuristico {
         return  " |Nombre: " + nombre +
                 " |Duración Horas: " + duracionHoras +
                 '|';
+    }
+
+    // En ServicioTuristico.java
+    public void mostrarInformacion() {
+        System.out.println(this.toString());
     }
 }

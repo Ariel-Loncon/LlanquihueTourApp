@@ -4,13 +4,13 @@ package com.LlanquihueTourApp.model;
  * SubClase que gestiona los datos de RutaGastronomica
  */
 
-public class RutaGastronomica extends ServicioTuristico{
+public class RutaGastronomica extends ServicioTuristico {
     private int numeroDeParadas;
 
     /**
      *
-     * @param nombre nombre del servicio de la ruta gastronómica
-     * @param duracionHoras duración en horas de la ruta
+     * @param nombre          nombre del servicio de la ruta gastronómica
+     * @param duracionHoras   duración en horas de la ruta
      * @param numeroDeParadas numero de veces que se detiene la ruta en sectores
      */
 
@@ -29,7 +29,8 @@ public class RutaGastronomica extends ServicioTuristico{
 
     /**
      * Devuelve los datos en forma de texto de los datos de RutaGatronomica
-     * @return  Una cadena de texto estructurada con todos los datos heredados de ServicioTuristico más los datos de RutaGatronomica
+     *
+     * @return Una cadena de texto estructurada con todos los datos heredados de ServicioTuristico más los datos de RutaGatronomica
      */
 
     @Override
@@ -38,3 +39,4 @@ public class RutaGastronomica extends ServicioTuristico{
                 " |Numero de paradas: " + numeroDeParadas;
     }
 }
+

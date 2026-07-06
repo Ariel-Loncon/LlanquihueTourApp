@@ -23,8 +23,7 @@ public class Main {
         String pathOpLocal = "resources/operadores.txt";
         ArrayList<Operadores> listaOp = gestorOperadores.readOpLocalText(pathOpLocal);
 
-        GestorServicios gestorServicios1 = new GestorServicios();
-        gestorServicios1.mostrarServicio();
+        GestorServicios gestor1 = new GestorServicios();
 
         int opcion = 0;
         while (opcion != 7) {
@@ -84,7 +83,7 @@ public class Main {
                         break;
                     case 6:
                         System.out.println("---LISTA DE SERVICIOS TURISTICOS---");
-                        gestorServicios1.mostrarServicio();
+                        gestor1.mostrarServicios();
                         break;
                     case 7:
                         System.out.println("¡Hasta luego!");
