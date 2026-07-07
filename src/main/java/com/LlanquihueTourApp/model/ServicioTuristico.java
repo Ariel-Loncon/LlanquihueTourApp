@@ -36,20 +36,7 @@ public class ServicioTuristico {
     }
 
 
-    /**
-     * Devuelve los datos en forma de texto de los datos de ServicioTuristico
-     * @return Una cadena de texto estructurada con todos los datos de ServicioTuristico
-     */
-
-    @Override
-    public String toString() {
-        return  " |Nombre: " + nombre +
-                " |Duración Horas: " + duracionHoras +
-                '|';
-    }
-
-    // En ServicioTuristico.java
     public void mostrarInformacion() {
-        System.out.println(this.toString());
+        System.out.print(" | Nombre: " + nombre + " | Duración: " + duracionHoras + " horas");
     }
 }

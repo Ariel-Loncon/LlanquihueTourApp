@@ -27,16 +27,14 @@ public class RutaGastronomica extends ServicioTuristico {
         this.numeroDeParadas = numeroDeParadas;
     }
 
-    /**
-     * Devuelve los datos en forma de texto de los datos de RutaGatronomica
-     *
-     * @return Una cadena de texto estructurada con todos los datos heredados de ServicioTuristico más los datos de RutaGatronomica
-     */
+
 
     @Override
-    public String toString() {
-        return "---RUTA GASTRONÓMICA---" + super.toString() +
-                " |Numero de paradas: " + numeroDeParadas;
+    public void mostrarInformacion() {
+        System.out.print("---RUTA GASTRONÓMICA---");
+        super.mostrarInformacion();
+        System.out.println(" | Paradas: " + numeroDeParadas);
     }
+
 }
 

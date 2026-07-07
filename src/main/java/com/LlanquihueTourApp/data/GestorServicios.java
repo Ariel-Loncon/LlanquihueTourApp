@@ -22,11 +22,11 @@ public class GestorServicios {
         listaServicios.add(new ExcursionCultural("Puerto Octay", 3, "Casa Werner"));
     }
 
-        public void mostrarServicios() {
-            for (ServicioTuristico servicio : listaServicios) {
-                servicio.mostrarInformacion();
-            }
+    public void mostrarServicios() {
+        for (ServicioTuristico servicio : listaServicios) {
+            servicio.mostrarInformacion();
         }
+    }
     }
 
 

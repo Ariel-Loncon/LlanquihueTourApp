@@ -28,16 +28,11 @@ public class PaseoLacustre extends ServicioTuristico {
     }
 
 
-    /**
-     * Devuelve los datos en forma de texto de los datos de PaseoLacustre
-     *
-     * @return Una cadena de texto estructurada con todos los datos heredados de ServicioTuristico más los datos de PaseoLacustre
-     */
 
     @Override
-    public String toString() {
-        return "---PASEO LA CUSTRE---" + super.toString() +
-                " |Tipo de Embarcación: " + tipoEmbarcacion;
+    public void mostrarInformacion() {
+        System.out.print("---PASEO LA CUSTRE---");
+        super.mostrarInformacion();
+        System.out.println(" | Tipo de Embarcación: " + tipoEmbarcacion);
     }
-
 }

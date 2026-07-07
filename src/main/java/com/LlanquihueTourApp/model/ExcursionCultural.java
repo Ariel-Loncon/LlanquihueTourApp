@@ -29,14 +29,10 @@ public class ExcursionCultural extends ServicioTuristico{
     }
 
 
-    /**
-     * Devuelve los datos en forma de texto de los datos de ExcursionCultural
-     * @return Una cadena de texto estructurada con todos los datos heredados de ServicioTuristico más los datos de ExcursionCultural
-     */
-
     @Override
-    public String toString() {
-        return "---EXCURSION CULTURAL---" + super.toString() +
-                " |Lugar histórico: " + lugarHistorico;
+    public void mostrarInformacion() {
+        System.out.print("---EXCURSION CULTURAL---");
+        super.mostrarInformacion();
+        System.out.println(" | Lugar histórico: " + lugarHistorico);
     }
 }
