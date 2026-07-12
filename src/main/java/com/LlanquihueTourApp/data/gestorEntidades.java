@@ -1,4 +1,8 @@
-package com.LlanquihueTourApp.model;
+package com.LlanquihueTourApp.data;
+import com.LlanquihueTourApp.model.Guia;
+import com.LlanquihueTourApp.model.Registrable;
+import com.LlanquihueTourApp.model.Tours;
+
 import java.util.ArrayList;
 
 public class gestorEntidades {
