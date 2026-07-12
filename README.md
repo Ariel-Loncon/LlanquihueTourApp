@@ -1,8 +1,8 @@
 [README_plantilla_EFT.md](https://github.com/user-attachments/files/28673507/README_plantilla_EFT.md)
 
 ![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
-# 🧠 Semana 6
-**Actividad Formativa 4: Creación de jerarquías de clases con herencia simple**
+# 🧠 Semana 7
+**Actividad Formativa 5: Aplicación de sobreescritura y polimorfismo en jerarquías**
 
 ## 👤 Autor del proyecto
 - **Nombre completo:** [Ariel Gustavo Loncon Lefimil]
@@ -17,12 +17,12 @@ Este proyecto consiste en el diseño e implementacion de un sistema de gestión 
 
 ---
 
-## 🛠️ Actualización: Semana 6 - Jerarquías y Herencia
-El objetivo de esta semana fue implementar una jerarquía de clases mediante herencia simple para modelar los distintos servicios turísticos de la agencia, permitiendo la reutilización de atributos comunes (nombre, duración) y especializando atributos propios de cada categoría.
+## 🛠️ Actualización: Semana 7 - Polimorfismo y Colecciones Genéricas
+El objetivo de esta semana fue avanzar en el diseño orientado a objetos mediante la implementación de polimorfismo, permitiendo gestionar una colección heterogénea de servicios turísticos bajo una referencia común y la ejecución dinámica de métodos sobrescritos.
 ### Clases Creadas/Modificadas:
-- **Superclase:** `ServicioTuristico`
-- **Subclases:** `RutaGastronomica`, `PaseoLacustre`, `ExcursionCultural`
-- **Gestion:** Nueva clase en data `GestorServicios` para la instancia de objetos de la nueva superclase y las nuevas subclases.
+- **Colección Polimórfica:** Se consolidó una estructura `List<ServicioTuristico>` que almacena objetos de distintas subclases (`RutaGastronomica`, `PaseoLacustre`, `ExcursionCultural`), permitiendo un manejo unificado.
+- **Implementación de Polimorfismo:** Se implemento el metodo `mostrarInformacion()`para que, al recorrer la lista, cada objeto responda según su propia implementación específica (sobrescritura)
+- **Recorrido Dinámico:** Se implementó un bucle for-each en `GestorServicios` que invoca el método polimórfico sin necesidad de conocer el tipo concreto del objeto en tiempo de compilación.
 
 ---
 
@@ -34,6 +34,9 @@ El objetivo de esta semana fue implementar una jerarquía de clases mediante her
 * **Validación de Datos:** Uso de clases especializadas (rut, email) para asegurar que solo información con formato válido ingrese al sistema.
 * **Persistencia Básica:** Lectura y procesamiento de archivos .txt mediante gestores dedicados.
 * **Herencia:** Extensión de clases base generales para representar de manera eficiente y jerárquica los datos específicos dentro del ecosistema de la agencia de Tours (como el nombre y cantidad de horas).
+* **Polimorfismo:** Capacidad de enviar el mismo mensaje `mostrarInformacion()` a diferentes tipos de objetos y que cada uno responda de forma coherente a su naturaleza.
+* **Sobrescritura de métodos (`@Override`):** Cada subclase proporciona una implementación específica que extiende o personaliza la lógica de la superclase.
+* **Colecciones Genéricas:** Uso eficiente de `List` para almacenar y recorrer la jerarquía de servicios de manera dinámica.
 
 ---
 
@@ -100,8 +103,8 @@ Para ejecutar correctamente la aplicación "Llanquihue Tour", asegúrate de segu
 ---
 
 
-**Fecha de entrega:** \[29/06/2026]
+**Fecha de entrega:** \[06/07/2026]
 
 ---
 
-© Duoc UC | Escuela de Informática y Telecomunicaciones | Actividad Formativa 4: Creación de jerarquías de clases con herencia simple
+© Duoc UC | Escuela de Informática y Telecomunicaciones | Actividad Formativa 5: Aplicación de sobreescritura y polimorfismo en jerarquías
