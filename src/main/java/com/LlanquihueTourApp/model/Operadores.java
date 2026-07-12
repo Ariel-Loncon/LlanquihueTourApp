@@ -4,7 +4,7 @@ package com.LlanquihueTourApp.model;
  * Clase encargada de gestionar los datos del operador local
  */
 
-public class Operadores{
+public class Operadores implements Registrable{
     private String oName;
     private String area;
 
@@ -49,10 +49,8 @@ public class Operadores{
      */
 
     @Override
-    public String toString() {
-        return "|" +
-                "| NOMBRE: " + oName +
-                "| AREA: " + area +
-                '|';
+    public void mostrarResumen() {
+        System.out.println("OPERADORES: " + oName + area);
+
     }
 }

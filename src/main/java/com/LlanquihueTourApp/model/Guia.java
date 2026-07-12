@@ -6,7 +6,7 @@ import com.LlanquihueTourApp.util.*;
  *
  */
 
-public class Guia {
+public class Guia implements Registrable {
 
     private rut    rut;
     private String gName;
@@ -60,11 +60,8 @@ public class Guia {
      */
 
     @Override
-    public String toString() {
-        return " " +
-                "| RUT: " + rut +
-                "| Nombre: " + gName +
-                "| Email: " + email +
-                '|';
+    public void mostrarResumen() {
+        System.out.println("GUIA TURISTICO: " + rut + gName + email);
+
     }
 }

@@ -4,7 +4,7 @@ package com.LlanquihueTourApp.model;
  * Clase encargada de gestionar los datos del tour
  */
 
-public class Tours{
+public class Tours implements Registrable{
     private int id;
     private String tName;
     private String type;
@@ -72,13 +72,9 @@ public class Tours{
      */
 
     @Override
-    public String toString() {
-        return "TOUR  " +
-                " | Id:" + id +
-                " | Nombre: " + tName +
-                " | Tipo: " + type +
-                " | Producción: " + production +
-                "|";
+    public void mostrarResumen() {
+        System.out.println("TOUR: " + id + tName + type + production);
+
     }
 }
 

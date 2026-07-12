@@ -4,7 +4,7 @@ package com.LlanquihueTourApp.model;
  * SuperClase que gestiona los datos de los servicios (subclases)
  */
 
-public class ServicioTuristico {
+public abstract class ServicioTuristico implements Registrable{
     private String nombre;
     private int duracionHoras;
 
@@ -39,4 +39,5 @@ public class ServicioTuristico {
     public void mostrarInformacion() {
         System.out.print(" | Nombre: " + nombre + " | Duración: " + duracionHoras + " horas");
     }
+    public abstract void mostrarResumen();
 }
