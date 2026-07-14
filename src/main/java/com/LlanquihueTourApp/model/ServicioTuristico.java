@@ -40,4 +40,9 @@ public abstract class ServicioTuristico implements Registrable{
         System.out.print(" | Nombre: " + nombre + " | Duración: " + duracionHoras + " horas");
     }
     public abstract void mostrarResumen();
+
+    @Override
+    public String[] getRowData() {
+        return new String[]{"Servivio turistico", this.getNombre(), String.valueOf(this.getDuracionHoras())};
+    }
 }

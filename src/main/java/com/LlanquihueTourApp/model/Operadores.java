@@ -53,4 +53,8 @@ public class Operadores implements Registrable{
         System.out.println("OPERADORES: " + oName + area);
 
     }
+    @Override
+    public String[] getRowData() {
+        return new String[]{"Operadores", this.getoName(), this.getArea()};
+    }
 }

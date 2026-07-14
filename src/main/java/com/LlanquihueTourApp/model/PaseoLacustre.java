@@ -35,4 +35,8 @@ public class PaseoLacustre extends ServicioTuristico {
         super.mostrarInformacion();
         System.out.println(" | Tipo de Embarcación: " + tipoEmbarcacion);
     }
+    @Override
+    public String[] getRowData() {
+        return new String[]{"Paseo la Custre", this.getNombre(), String.valueOf(this.getDuracionHoras()), this.getTipoEmbarcacion().toString()};
+    }
 }

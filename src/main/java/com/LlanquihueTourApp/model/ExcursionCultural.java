@@ -35,4 +35,8 @@ public class ExcursionCultural extends ServicioTuristico{
         super.mostrarInformacion();
         System.out.println(" | Lugar histórico: " + lugarHistorico);
     }
+    @Override
+    public String[] getRowData() {
+        return new String[]{"Excursion Cultural", this.getNombre(), String.valueOf(this.getDuracionHoras()), this.getLugarHistorico()};
+    }
 }

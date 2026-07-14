@@ -1,0 +1,33 @@
+package com.LlanquihueTourApp.data;
+
+import com.LlanquihueTourApp.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class GestorGlobal {
+    private ArrayList<Registrable> baseDeDatos = new ArrayList<>();
+
+    public void cargarTodo() {
+        // Limpiamos antes de cargar para evitar duplicados si se llama varias veces
+        baseDeDatos.clear();
+
+        // Carga centralizada
+        baseDeDatos.addAll(new GestorDatos().readToursText("resources/tours.txt"));
+        baseDeDatos.addAll(new GestorGuias().readGuiasText("resources/guias.txt"));
+        baseDeDatos.addAll(new GestorOperadores().readOpLocalText("resources/operadores.txt"));
+        baseDeDatos.addAll(new GestorServicios().readServiciosText("resources/Servicios.txt"));
+    }
+
+    // Filtro genérico por tipo
+    public <T> List<T> filtrarPorTipo(Class<T> clase) {
+        return baseDeDatos.stream()
+                .filter(clase::isInstance)
+                .map(clase::cast)
+                .collect(Collectors.toList());
+    }
+
+    public ArrayList<Registrable> getBaseDeDatos() {
+        return baseDeDatos;
+    }
+}

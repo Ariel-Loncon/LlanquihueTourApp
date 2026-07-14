@@ -1,33 +1,70 @@
 package com.LlanquihueTourApp.data;
+
 import com.LlanquihueTourApp.model.*;
-
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-
 
 /**
- * Clase encargada de gestionar los datos de ServicioTuristico, RutaGastronomica, PaseoLacustre y ExcursionCultural
+ * Clase encargada de gestionar los datos de Servicios Turísticos guardados en el archivo de texto.
  */
-
 public class GestorServicios {
-    private List<ServicioTuristico> listaServicios;
 
-    public GestorServicios() {
-        listaServicios = new ArrayList<>();
+    public ArrayList<ServicioTuristico> readServiciosText(String filePath) {
+        // Lista donde se almacenará la información
+        ArrayList<ServicioTuristico> listaServicios = new ArrayList<>();
 
-        listaServicios.add(new RutaGastronomica("Ruta Sabores", 5, 2));
-        listaServicios.add(new RutaGastronomica("Ruta licores", 3, 1));
-        listaServicios.add(new PaseoLacustre("Ruta peninsula", 1, "Barco"));
-        listaServicios.add(new PaseoLacustre("Ruta Laguna", 3, "Eléctrico"));
-        listaServicios.add(new ExcursionCultural("Puerto Octay", 3, "Casa Werner"));
-    }
-
-    public void mostrarServicios() {
-        for (ServicioTuristico servicio : listaServicios) {
-            servicio.mostrarInformacion();
+        // Validación y creación del archivo si no existe usando la clase GestorArchivo
+        if (!GestorArchivo.Archivo(filePath)) {
+            System.out.println("El archivo no existe o no se puede acceder: " + filePath);
+            return listaServicios;
         }
-    }
-    }
 
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            int lineNumber = 0;
 
+            while ((line = br.readLine()) != null) {
+                lineNumber++;
+
+                if (line.trim().isEmpty()) continue;
+
+                String[] data = line.split(",");
+
+                // Validación de cantidad de campos (ajustar según el constructor, aquí se asume 4 campos mínimo)
+                if (data.length < 4) {
+                    System.out.println("Error en línea " + lineNumber + ": Estructura incorrecta de Servicios (Se esperaban 4 campos, se encontraron " + data.length + ").");
+                    continue;
+                }
+
+                String tipo = data[0].trim();
+
+                try {
+                    switch (tipo) {
+                        case "RutaGastronomica":
+                            listaServicios.add(new RutaGastronomica(data[1].trim(), Integer.parseInt(data[2].trim()), Integer.parseInt(data[3].trim())));
+                            break;
+                        case "PaseoLacustre":
+                            listaServicios.add(new PaseoLacustre(data[1].trim(), Integer.parseInt(data[2].trim()), data[3].trim()));
+                            break;
+                        case "ExcursionCultural":
+                            listaServicios.add(new ExcursionCultural(data[1].trim(), Integer.parseInt(data[2].trim()), data[3].trim()));
+                            break;
+                        default:
+                            System.out.println("Línea " + lineNumber + ": Tipo de servicio desconocido: " + tipo);
+                    }
+                } catch (NumberFormatException nfe) {
+                    System.out.println("Error de formato numérico en línea " + lineNumber + ": " + nfe.getMessage());
+                } catch (Exception e) {
+                    System.out.println("Error procesando los datos en línea " + lineNumber + ": " + e.getMessage());
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer archivo de servicios: " + e.getMessage());
+        }
+
+        return listaServicios;
+    }
+}
 

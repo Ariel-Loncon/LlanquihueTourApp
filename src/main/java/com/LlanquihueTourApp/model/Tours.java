@@ -76,5 +76,9 @@ public class Tours implements Registrable{
         System.out.println("TOUR: " + id + tName + type + production);
 
     }
+    @Override
+    public String[] getRowData() {
+        return new String[]{"TOUR", this.gettName(), this.getType().toString(), String.valueOf(this.getProduction())};
+    }
 }
 

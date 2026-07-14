@@ -64,4 +64,8 @@ public class Guia implements Registrable {
         System.out.println("GUIA TURISTICO: " + rut + gName + email);
 
     }
+    @Override
+    public String[] getRowData() {
+        return new String[]{"Guía", this.getgName(), this.getRut().toString(), this.getEmail().toString()};
+    }
 }
