@@ -37,7 +37,6 @@ public class PanelPrincipal extends JPanel {
         crearZonaSuperior();
         crearZonaCentral();
         crearZonaInferior();
-
         configurarEventos();
     }
 
@@ -64,8 +63,6 @@ public class PanelPrincipal extends JPanel {
         JPanel panelDerecho = new JPanel(new FlowLayout(FlowLayout.RIGHT, 0, 0));
         btnAgregar = new JButton("Agregar");
         btnEliminar = new JButton("Eliminar");
-       // btnEliminar.setBackground(new Color(231, 76, 60)); // Color rojo elegante para advertir peligro
-       // btnEliminar.setForeground(Color.WHITE);
         panelDerecho.add(btnAgregar);
         panelDerecho.add(btnEliminar);
 

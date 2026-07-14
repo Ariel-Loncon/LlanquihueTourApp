@@ -18,13 +18,12 @@ public class gestorEntidades {
 
     public void mostrarTodo() {
         for (Registrable item : listaRegistros) {
-            // 1. Llamada polimórfica obligatoria: cada objeto sabe cómo presentarse
+
             item.mostrarResumen();
 
-            // 2. Diferenciación de tipos específicos usando instanceof (¡Cumple la Rúbrica con creces!)
             if (item instanceof Guia) {
                 Guia g = (Guia) item;
-                System.out.println("   [Verificación] -> Rol: Guía Turístico. Validar credencial vigente y contacto: " + g.getEmail());
+                System.out.println("   [Verificación] -> Rol: Guía Turístico: " + g.getEmail());
 
             } else if (item instanceof Tours) {
                 Tours t = (Tours) item;
@@ -35,7 +34,6 @@ public class gestorEntidades {
                 System.out.println("   [Verificación] -> Rol: Colaborador/Operador Local. Área operativa asignada: " + o.getArea());
 
             } else if (item instanceof ServicioTuristico) {
-                // Aquí agrupamos las subclases de ServicioTuristico si queremos comportamientos generales o específicos
                 System.out.print("   [Verificación] -> Rol: Servicio Turístico Activo. ");
 
                 if (item instanceof RutaGastronomica) {

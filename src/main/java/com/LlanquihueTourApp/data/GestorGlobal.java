@@ -9,7 +9,7 @@ public class GestorGlobal {
     private ArrayList<Registrable> baseDeDatos = new ArrayList<>();
 
     public void cargarTodo() {
-        // Limpiamos antes de cargar para evitar duplicados si se llama varias veces
+
         baseDeDatos.clear();
 
         // Carga centralizada
@@ -19,7 +19,6 @@ public class GestorGlobal {
         baseDeDatos.addAll(new GestorServicios().readServiciosText("resources/Servicios.txt"));
     }
 
-    // Filtro genérico por tipo
     public <T> List<T> filtrarPorTipo(Class<T> clase) {
         return baseDeDatos.stream()
                 .filter(clase::isInstance)

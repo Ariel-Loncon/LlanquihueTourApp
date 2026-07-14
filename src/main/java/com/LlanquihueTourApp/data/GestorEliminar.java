@@ -57,7 +57,6 @@ public class GestorEliminar {
     public static boolean eliminarServicio(String tipo, String nombreServicioAEliminar) {
         String ruta = "resources/Servicios.txt";
 
-        // Corrección ortográfica automática: de "Excurcion" (con C) a "Excursion" (con S)
         final String tipoCorregido = tipo.replace("Excurcion", "Excursion");
 
         return eliminarLinea(ruta, ",", (campos) -> {
