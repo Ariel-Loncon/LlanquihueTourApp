@@ -22,13 +22,13 @@ public class VentanaAgregar extends JDialog {
     private JTextField txtOpNombre, txtOpArea;
 
     // --- CAMPOS PARA RUTA GASTRONOMICA ---
-    private JTextField txtRutaNombre, txtRutaValor, txtRutaAtracciones;
+    private JTextField txtRutaNombre, txtRutaHoras, txtRutaParadas;
 
     // --- CAMPOS PARA PASEO LACUSTRE ---
-    private JTextField txtPaseoNombre, txtPaseoValor, txtPaseoDestino;
+    private JTextField txtPaseoNombre, txtPaseoHoras, txtPaseoEmbarcacion;
 
     // --- CAMPOS PARA EXCURSION CULTURAL ---
-    private JTextField txtExcurNombre, txtExcurValor, txtExcurDetalle;
+    private JTextField txtExcurNombre, txtExcurHoras, txtExcurLugar;
 
     private JButton btnGuardar;
     private JButton btnCancelar;
@@ -39,7 +39,7 @@ public class VentanaAgregar extends JDialog {
         setLocationRelativeTo(padre);
         setLayout(new BorderLayout(10, 10));
 
-        // Margen de la ventana
+
         ((JPanel)getContentPane()).setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
         // 1. Selector Superior
@@ -55,7 +55,7 @@ public class VentanaAgregar extends JDialog {
         cardLayout = new CardLayout();
         panelFormularios = new JPanel(cardLayout);
 
-        inicializarFormularios(); // Crea todas las "tarjetas" de formularios
+        inicializarFormularios();
         add(panelFormularios, BorderLayout.CENTER);
 
         // 3. Botones Inferiores
@@ -89,36 +89,36 @@ public class VentanaAgregar extends JDialog {
         // --- FORMULARIO OPERADORES ---
         JPanel pOperadores = new JPanel(new GridLayout(2, 2, 5, 5));
         pOperadores.add(new JLabel("Nombre Operador:")); txtOpNombre = new JTextField(); pOperadores.add(txtOpNombre);
-        pOperadores.add(new JLabel("Área / Cobertura:")); txtOpArea = new JTextField(); pOperadores.add(txtOpArea);
+        pOperadores.add(new JLabel("Área:")); txtOpArea = new JTextField(); pOperadores.add(txtOpArea);
         panelFormularios.add(pOperadores, "Operadores");
 
         // --- FORMULARIO RUTA GASTRONOMICA ---
         JPanel pRuta = new JPanel(new GridLayout(3, 2, 5, 5));
-        pRuta.add(new JLabel("Nombre Local:")); txtRutaNombre = new JTextField(); pRuta.add(txtRutaNombre);
-        pRuta.add(new JLabel("Valor ($):")); txtRutaValor = new JTextField(); pRuta.add(txtRutaValor);
-        pRuta.add(new JLabel("Cantidad Atracciones:")); txtRutaAtracciones = new JTextField(); pRuta.add(txtRutaAtracciones);
+        pRuta.add(new JLabel("Nombre:")); txtRutaNombre = new JTextField(); pRuta.add(txtRutaNombre);
+        pRuta.add(new JLabel("Duración horas:")); txtRutaHoras = new JTextField(); pRuta.add(txtRutaHoras);
+        pRuta.add(new JLabel("Numero de paradas:")); txtRutaParadas = new JTextField(); pRuta.add(txtRutaParadas);
         panelFormularios.add(pRuta, "RutaGastronomica");
 
         // --- FORMULARIO PASEO LACUSTRE ---
         JPanel pPaseo = new JPanel(new GridLayout(3, 2, 5, 5));
-        pPaseo.add(new JLabel("Nombre Embarcación:")); txtPaseoNombre = new JTextField(); pPaseo.add(txtPaseoNombre);
-        pPaseo.add(new JLabel("Tarifa ($):")); txtPaseoValor = new JTextField(); pPaseo.add(txtPaseoValor);
-        pPaseo.add(new JLabel("Destino / Ruta:")); txtPaseoDestino = new JTextField(); pPaseo.add(txtPaseoDestino);
+        pPaseo.add(new JLabel("Nombre:")); txtPaseoNombre = new JTextField(); pPaseo.add(txtPaseoNombre);
+        pPaseo.add(new JLabel("Duración horas:")); txtPaseoHoras = new JTextField(); pPaseo.add(txtPaseoHoras);
+        pPaseo.add(new JLabel("Tipo de Embarcacion:")); txtPaseoEmbarcacion = new JTextField(); pPaseo.add(txtPaseoEmbarcacion);
         panelFormularios.add(pPaseo, "PaseoLacustre");
 
         // --- FORMULARIO EXCURSION CULTURAL ---
         JPanel pExcur = new JPanel(new GridLayout(3, 2, 5, 5));
-        pExcur.add(new JLabel("Lugar Histórico:")); txtExcurNombre = new JTextField(); pExcur.add(txtExcurNombre);
-        pExcur.add(new JLabel("Precio Guía ($):")); txtExcurValor = new JTextField(); pExcur.add(txtExcurValor);
-        pExcur.add(new JLabel("Detalles:")); txtExcurDetalle = new JTextField(); pExcur.add(txtExcurDetalle);
+        pExcur.add(new JLabel("Nombre:")); txtExcurNombre = new JTextField(); pExcur.add(txtExcurNombre);
+        pExcur.add(new JLabel("Duración horas:")); txtExcurHoras = new JTextField(); pExcur.add(txtExcurHoras);
+        pExcur.add(new JLabel("Lugar Histórico:")); txtExcurLugar = new JTextField(); pExcur.add(txtExcurLugar);
         panelFormularios.add(pExcur, "ExcursionCultural");
     }
 
     private void configurarEventos() {
-        // Al cambiar el ComboBox, alternamos el formulario mostrado
+
         comboOpciones.addActionListener(e -> {
             String seleccion = (String) comboOpciones.getSelectedItem();
-            // Controlamos si el combo usa "ExcursionCultural" internamente para llamarlo igual que la tarjeta
+
             if (seleccion.equals("ExcursionCultural") || seleccion.equals("ExcursionCultural")) {
                 cardLayout.show(panelFormularios, "ExcursionCultural");
             } else {
@@ -179,41 +179,41 @@ public class VentanaAgregar extends JDialog {
                     break;
 
                 case "RutaGastronomica":
-                    if(txtRutaNombre.getText().isEmpty() || txtRutaValor.getText().isEmpty()) {
+                    if(txtRutaNombre.getText().isEmpty() || txtRutaHoras.getText().isEmpty()) {
                         throw new IllegalArgumentException("Debe completar los campos.");
                     }
                     // Formato en servicios: Tipo, Nombre, Valor, Atracciones/Detalle
                     String lineaRuta = String.format("RutaGastronomica,%s,%s,%s",
                             txtRutaNombre.getText().trim(),
-                            txtRutaValor.getText().trim(),
-                            txtRutaAtracciones.getText().trim());
+                            txtRutaHoras.getText().trim(),
+                            txtRutaParadas.getText().trim());
 
                     escribirEnArchivo("resources/Servicios.txt", lineaRuta);
                     break;
 
                 case "PaseoLacustre":
-                    if(txtPaseoNombre.getText().isEmpty() || txtPaseoValor.getText().isEmpty()) {
+                    if(txtPaseoNombre.getText().isEmpty() || txtPaseoHoras.getText().isEmpty()) {
                         throw new IllegalArgumentException("Debe completar los campos.");
                     }
                     // Formato: PaseoLacustre, Nombre, Valor, Destino
                     String lineaPaseo = String.format("PaseoLacustre,%s,%s,%s",
                             txtPaseoNombre.getText().trim(),
-                            txtPaseoValor.getText().trim(),
-                            txtPaseoDestino.getText().trim());
+                            txtPaseoHoras.getText().trim(),
+                            txtPaseoEmbarcacion.getText().trim());
 
                     escribirEnArchivo("resources/Servicios.txt", lineaPaseo);
                     break;
 
                 //case "ExcursionCultural":
                 case "ExcursionCultural":
-                    if(txtExcurNombre.getText().isEmpty() || txtExcurValor.getText().isEmpty()) {
+                    if(txtExcurNombre.getText().isEmpty() || txtExcurHoras.getText().isEmpty()) {
                         throw new IllegalArgumentException("Debe completar los campos.");
                     }
                     // Formato: ExcursionCultural, Nombre, Valor, Detalles
                     String lineaExcur = String.format("ExcursionCultural,%s,%s,%s",
                             txtExcurNombre.getText().trim(),
-                            txtExcurValor.getText().trim(),
-                            txtExcurDetalle.getText().trim());
+                            txtExcurHoras.getText().trim(),
+                            txtExcurLugar.getText().trim());
 
                     escribirEnArchivo("resources/Servicios.txt", lineaExcur);
                     break;

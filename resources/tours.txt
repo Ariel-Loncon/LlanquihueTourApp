@@ -7,3 +7,5 @@
 7;Recorrido en bote;Tour;14000
 8;Caminata Lago;Caminata;-5000
 9;;Gastronomía;4000;Hotel Cabaña del Lago
+fsdf;sdfsd;sdfsdf;sdfsdf
+sdrf;sdf;sdf;sdf
