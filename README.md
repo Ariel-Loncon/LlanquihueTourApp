@@ -113,7 +113,6 @@ Para ejecutar correctamente la aplicación "LlanquihueTourApp", asegúrate de se
     │   └── GestorDatos.java
     │   └── GestorServicios.java
     │   └── gestorEntidades.java  <-- [NUEVO] Procesamiento polimórfico e instanceof
-    │   └── GestorGlobal.java     <-- [NUEVO] Motor centralizador de carga y filtros
     ├── model/            # Entidades del dominio
     │   ├── Guia.java
     │   ├── Operadores.java
