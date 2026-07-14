@@ -19,13 +19,13 @@ public class PanelPrincipal extends JPanel {
     private JButton btnEliminar;
 
     // Instanciamos tu GestorGlobal de datos
-    private GestorGlobal gestorGlobal;
+    private gestorEntidades gestorEntidades;
 
     public PanelPrincipal() {
         // Inicializamos tu gestor y cargamos los datos desde los archivos .txt
-        gestorGlobal = new GestorGlobal();
+        gestorEntidades = new gestorEntidades();
         try {
-            gestorGlobal.cargarTodo();
+            gestorEntidades.cargarTodo();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al cargar los archivos .txt iniciales: " + e.getMessage(),
                     "Error de Carga", JOptionPane.ERROR_MESSAGE);
@@ -108,7 +108,7 @@ public class PanelPrincipal extends JPanel {
             dialogo.setVisible(true);
 
             // Cuando la ventana de agregar se cierre, recargamos la lista desde los archivos
-            gestorGlobal.cargarTodo();
+            gestorEntidades.cargarTodo();
 
             // Refrescamos la tabla con la selección actual para que se vea el nuevo elemento
             cargarDatosEnTabla((String) comboOpciones.getSelectedItem());
@@ -195,7 +195,7 @@ public class PanelPrincipal extends JPanel {
                 if (exito) {
                     JOptionPane.showMessageDialog(this, "¡Registro eliminado exitosamente!");
                     // Recargamos los datos en memoria del GestorGlobal y actualizamos la tabla
-                    gestorGlobal.cargarTodo();
+                    gestorEntidades.cargarTodo();
                     cargarDatosEnTabla(opcionActual);
                 } else {
                     JOptionPane.showMessageDialog(this, "No se pudo eliminar el registro en el archivo de datos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -226,7 +226,7 @@ public class PanelPrincipal extends JPanel {
                     modeloTabla.setColumnIdentifiers(
                             new Object[]{"ID", "Nombre del Tour", "Valor producción"}
                     );
-                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+                    for (Registrable r : gestorEntidades.getBaseDeDatos()) {
                         if (r instanceof Tours) {
 
                             Tours t = (Tours) r;
@@ -241,7 +241,7 @@ public class PanelPrincipal extends JPanel {
                     modeloTabla.setColumnIdentifiers(
                             new Object[]{"Nombre", "RUT", "Correo"}
                     );
-                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+                    for (Registrable r : gestorEntidades.getBaseDeDatos()) {
                         if (r instanceof Guia) {
 
                             Guia g = (Guia) r;
@@ -256,7 +256,7 @@ public class PanelPrincipal extends JPanel {
                     modeloTabla.setColumnIdentifiers(
                             new Object[]{"Nombre", "Área"}
                     );
-                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+                    for (Registrable r : gestorEntidades.getBaseDeDatos()) {
                         if (r instanceof Operadores) {
                             Operadores op = (Operadores) r;
                             modeloTabla.addRow(new Object[]{op.getoName(), op.getArea()
@@ -269,7 +269,7 @@ public class PanelPrincipal extends JPanel {
                     modeloTabla.setColumnIdentifiers(
                             new Object[]{"Nombre","Duración","Número de paradas"}
                     );
-                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+                    for (Registrable r : gestorEntidades.getBaseDeDatos()) {
 
                         if (r instanceof RutaGastronomica) {
 
@@ -284,7 +284,7 @@ public class PanelPrincipal extends JPanel {
                     modeloTabla.setColumnIdentifiers(
                             new Object[]{"Nombre","Duración","Tipo de embarcación"}
                     );
-                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+                    for (Registrable r : gestorEntidades.getBaseDeDatos()) {
 
                         if (r instanceof PaseoLacustre) {
 
@@ -300,7 +300,7 @@ public class PanelPrincipal extends JPanel {
                     modeloTabla.setColumnIdentifiers(
                             new Object[]{"Nombre","Duración","Lugar histórico"}
                     );
-                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+                    for (Registrable r : gestorEntidades.getBaseDeDatos()) {
 
                         if (r instanceof ExcursionCultural) {
 

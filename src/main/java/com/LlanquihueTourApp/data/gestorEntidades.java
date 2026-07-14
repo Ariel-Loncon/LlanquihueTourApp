@@ -10,48 +10,60 @@ import java.util.ArrayList;
  * Aplica la verificación de tipos mediante instanceof para diferenciar comportamientos.
  */
 public class gestorEntidades {
-    private ArrayList<Registrable> listaRegistros = new ArrayList<>();
+    private ArrayList<Registrable> baseDeDatos = new ArrayList<>();
 
-    public void agregar(Registrable item) {
-        listaRegistros.add(item);
+    public void cargarTodo() {
+
+        baseDeDatos.clear();
+
+        baseDeDatos.addAll(new GestorDatos().readToursText("resources/tours.txt"));
+        baseDeDatos.addAll(new GestorGuias().readGuiasText("resources/guias.txt"));
+        baseDeDatos.addAll(new GestorOperadores().readOpLocalText("resources/operadores.txt"));
+        baseDeDatos.addAll(new GestorServicios().readServiciosText("resources/Servicios.txt"));
     }
 
+    public void agregar(Registrable item) {
+        baseDeDatos.add(item);
+    }
+
+    public ArrayList<Registrable> getBaseDeDatos() {
+        return baseDeDatos;
+    }
+
+
     public void mostrarTodo() {
-        for (Registrable item : listaRegistros) {
+        for (Registrable item : baseDeDatos) {
 
             item.mostrarResumen();
 
             if (item instanceof Guia) {
                 Guia g = (Guia) item;
-                System.out.println("   [Verificación] -> Rol: Guía Turístico: " + g.getEmail());
+                System.out.println(" Email: : " + g.getEmail());
 
             } else if (item instanceof Tours) {
                 Tours t = (Tours) item;
-                System.out.println("   [Verificación] -> Rol: Tour General (" + t.getType() + "). Ganancia proyectada: $" + t.getProduction());
+                System.out.println(" Tipo " + t.getType() + "Producción:" + t.getProduction());
 
             } else if (item instanceof Operadores) {
                 Operadores o = (Operadores) item;
-                System.out.println("   [Verificación] -> Rol: Colaborador/Operador Local. Área operativa asignada: " + o.getArea());
+                System.out.println(" Area: " + o.getArea());
 
             } else if (item instanceof ServicioTuristico) {
                 System.out.print("   [Verificación] -> Rol: Servicio Turístico Activo. ");
 
                 if (item instanceof RutaGastronomica) {
                     RutaGastronomica rg = (RutaGastronomica) item;
-                    System.out.println("Subtipo: Ruta Gastronómica con " + rg.getNumeroDeParadas() + " paradas de degustación.");
+                    System.out.println("Paradas:" + rg.getNumeroDeParadas());
                 } else if (item instanceof PaseoLacustre) {
                     PaseoLacustre pl = (PaseoLacustre) item;
-                    System.out.println("Subtipo: Paseo Lacustre. Tipo de navegación/embarcación: " + pl.getTipoEmbarcacion());
+                    System.out.println("Embarcación: " + pl.getTipoEmbarcacion());
                 } else if (item instanceof ExcursionCultural) {
                     ExcursionCultural ec = (ExcursionCultural) item;
-                    System.out.println("Subtipo: Excursión Cultural guiada en " + ec.getLugarHistorico());
+                    System.out.println("Lugar: " + ec.getLugarHistorico());
                 }
             }
             System.out.println("--------------------------------------------------------------------------------");
         }
     }
 
-    public ArrayList<Registrable> getListaRegistros() {
-        return listaRegistros;
-    }
 }
