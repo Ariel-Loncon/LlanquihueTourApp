@@ -19,13 +19,6 @@ public class GestorGlobal {
         baseDeDatos.addAll(new GestorServicios().readServiciosText("resources/Servicios.txt"));
     }
 
-    public <T> List<T> filtrarPorTipo(Class<T> clase) {
-        return baseDeDatos.stream()
-                .filter(clase::isInstance)
-                .map(clase::cast)
-                .collect(Collectors.toList());
-    }
-
     public ArrayList<Registrable> getBaseDeDatos() {
         return baseDeDatos;
     }

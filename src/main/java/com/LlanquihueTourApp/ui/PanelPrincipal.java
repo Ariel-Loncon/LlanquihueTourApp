@@ -223,68 +223,91 @@ public class PanelPrincipal extends JPanel {
         try {
             switch (opcion) {
                 case "Tours":
-                    // Definimos columnas correspondientes a un Tour
-                    modeloTabla.setColumnIdentifiers(new Object[]{"ID", "Nombre del Tour", "Valor produccion"});
+                    modeloTabla.setColumnIdentifiers(
+                            new Object[]{"ID", "Nombre del Tour", "Valor producción"}
+                    );
+                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+                        if (r instanceof Tours) {
 
-                    // Tu método filtrarPorTipo devuelve mágicamente sólo los objetos de tipo Tour
-                    List<Tours> tours = gestorGlobal.filtrarPorTipo(Tours.class);
-                    for (Tours t : tours) {
-                        modeloTabla.addRow(new Object[]{t.getId(), t.gettName(), "$" + t.getProduction()});
-                    }
-                    break;
+                            Tours t = (Tours) r;
 
-                case "Guia":
-                    // Columnas de un Guía
-                    modeloTabla.setColumnIdentifiers(new Object[]{"Nombre", "RUT", "Correo electrónico"});
-
-                    List<Guia> guias = gestorGlobal.filtrarPorTipo(Guia.class);
-                    for (Guia g : guias) {
-                        modeloTabla.addRow(new Object[]{g.getgName(), g.getRut(), g.getEmail()});
-                    }
-                    break;
-
-                case "Operadores":
-                    // Columnas de un Operador
-                    modeloTabla.setColumnIdentifiers(new Object[]{"Nombre", "Area de servicio"});
-
-                    List<Operadores> operadores = gestorGlobal.filtrarPorTipo(Operadores.class);
-                    for (Operadores op : operadores) {
-                        modeloTabla.addRow(new Object[]{op.getoName(), op.getArea()});
-                    }
-                    break;
-
-                case "RutaGastronomica":
-                    modeloTabla.setColumnIdentifiers(new Object[]{"Nombre", "Duración Horas", "Numero de paradas"});
-
-                    List<RutaGastronomica> serviciosG = gestorGlobal.filtrarPorTipo(RutaGastronomica.class);
-                    for (RutaGastronomica s : serviciosG) {
-                        if (s instanceof RutaGastronomica) {
-                            RutaGastronomica rg = (RutaGastronomica) s;
-                            modeloTabla.addRow(new Object[]{rg.getNombre(), rg.getDuracionHoras(), rg.getNumeroDeParadas()});
+                            modeloTabla.addRow(new Object[]{t.getId(), t.gettName(), "$" + t.getProduction()
+                            });
                         }
                     }
                     break;
 
-                case "PaseoLacustre":
-                    modeloTabla.setColumnIdentifiers(new Object[]{"Nombre", "Duración Horas", "Tipo de Embarcacion"});
+                case "Guia":
+                    modeloTabla.setColumnIdentifiers(
+                            new Object[]{"Nombre", "RUT", "Correo"}
+                    );
+                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+                        if (r instanceof Guia) {
 
-                    List<PaseoLacustre> serviciosL = gestorGlobal.filtrarPorTipo(PaseoLacustre.class);
-                    for (PaseoLacustre s : serviciosL) {
-                        if (s instanceof PaseoLacustre) {
-                            PaseoLacustre pl = (PaseoLacustre) s;
-                            modeloTabla.addRow(new Object[]{pl.getNombre(), pl.getDuracionHoras(), pl.getTipoEmbarcacion()});
+                            Guia g = (Guia) r;
+
+                            modeloTabla.addRow(new Object[]{g.getgName(), g.getRut(), g.getEmail()
+                            });
+                        }
+                    }
+                    break;
+
+                case "Operadores":
+                    modeloTabla.setColumnIdentifiers(
+                            new Object[]{"Nombre", "Área"}
+                    );
+                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+                        if (r instanceof Operadores) {
+                            Operadores op = (Operadores) r;
+                            modeloTabla.addRow(new Object[]{op.getoName(), op.getArea()
+                            });
+                        }
+                    }
+                    break;
+
+                case "RutaGastronomica":
+                    modeloTabla.setColumnIdentifiers(
+                            new Object[]{"Nombre","Duración","Número de paradas"}
+                    );
+                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+
+                        if (r instanceof RutaGastronomica) {
+
+                            RutaGastronomica rg = (RutaGastronomica) r;
+
+                            modeloTabla.addRow(new Object[]{rg.getNombre(), rg.getDuracionHoras(), rg.getNumeroDeParadas()
+                            });
+                        }
+                    }
+                    break;
+                case "PaseoLacustre":
+                    modeloTabla.setColumnIdentifiers(
+                            new Object[]{"Nombre","Duración","Tipo de embarcación"}
+                    );
+                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
+
+                        if (r instanceof PaseoLacustre) {
+
+                            PaseoLacustre pl = (PaseoLacustre) r;
+
+                            modeloTabla.addRow(new Object[]{pl.getNombre(), pl.getDuracionHoras(), pl.getTipoEmbarcacion()
+                            });
                         }
                     }
                     break;
 
                 case "ExcursionCultural":
-                    modeloTabla.setColumnIdentifiers(new Object[]{"Nombre", "Duración Horas", "Lugar histórico"});
+                    modeloTabla.setColumnIdentifiers(
+                            new Object[]{"Nombre","Duración","Lugar histórico"}
+                    );
+                    for (Registrable r : gestorGlobal.getBaseDeDatos()) {
 
-                    List<ExcursionCultural> serviciosC = gestorGlobal.filtrarPorTipo(ExcursionCultural.class);
-                    for (ExcursionCultural s : serviciosC) {
-                        if (s instanceof ExcursionCultural) {
-                            ExcursionCultural ec = (ExcursionCultural) s;
-                            modeloTabla.addRow(new Object[]{ec.getNombre(), ec.getDuracionHoras(), ec.getLugarHistorico()});
+                        if (r instanceof ExcursionCultural) {
+
+                            ExcursionCultural ec = (ExcursionCultural) r;
+
+                            modeloTabla.addRow(new Object[]{ec.getNombre(), ec.getDuracionHoras(), ec.getLugarHistorico()
+                            });
                         }
                     }
                     break;
