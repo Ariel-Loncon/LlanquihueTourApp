@@ -1,0 +1,5 @@
+RutaGastronomica,Ruta Sabores,5,2
+RutaGastronomica,Ruta licores,3,1
+PaseoLacustreRuta península,1,Barco
+PaseoLacustre,Ruta Laguna,3,Eléctrico
+ExcursionCultural,Puerto Octay,3,Casa Werner
